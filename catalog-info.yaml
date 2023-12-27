@@ -4,7 +4,7 @@ metadata:
   name: online-boutique
   description: online retail shop
 spec:
-  owner: retail-team
+  owner: default/retail-team
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Group
@@ -23,5 +23,5 @@ metadata:
 spec:
   type: website
   lifecycle: production
-  owner: retail-team
-  system: online-boutique
+  owner: default/retail-team
+  system: default/online-boutique
