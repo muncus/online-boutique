@@ -1,0 +1,27 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: online-boutique
+  description: online retail shop
+spec:
+  owner: retail-team
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: retail-team
+spec:
+  type: team
+  children: []
+  members: [muncus]
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  namespace: online-boutique
+  name: frontend
+spec:
+  type: website
+  lifecycle: production
+  owner: retail-team
+  system: online-boutique
