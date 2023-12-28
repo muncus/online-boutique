@@ -20,6 +20,8 @@ kind: Component
 metadata:
   namespace: online-boutique
   name: frontend
+  annotations:
+    backstage.io/kubernetes-label-selector: 'app=frontend'
 spec:
   type: website
   lifecycle: production
