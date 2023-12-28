@@ -22,6 +22,7 @@ metadata:
   name: frontend
   annotations:
     backstage.io/kubernetes-label-selector: 'app=frontend'
+    backstage.io/kubernetes-id: 'frontend'
 spec:
   type: website
   lifecycle: production
