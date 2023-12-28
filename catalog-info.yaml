@@ -21,10 +21,22 @@ metadata:
   namespace: online-boutique
   name: frontend
   annotations:
-    backstage.io/kubernetes-label-selector: 'app=frontend'
     backstage.io/kubernetes-id: 'frontend'
 spec:
   type: website
+  lifecycle: production
+  owner: default/retail-team
+  system: default/online-boutique
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  namespace: online-boutique
+  name: cartservice
+  annotations:
+    backstage.io/kubernetes-id: 'cartservice'
+spec:
+  type: service
   lifecycle: production
   owner: default/retail-team
   system: default/online-boutique
