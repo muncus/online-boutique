@@ -34,7 +34,7 @@ metadata:
   namespace: online-boutique
   name: cartservice
   annotations:
-    backstage.io/kubernetes-label-selector: 'app=cartservice'
+    backstage.io/kubernetes-id: 'cartservice'
 spec:
   type: service
   lifecycle: production
