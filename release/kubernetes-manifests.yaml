@@ -22,6 +22,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: emailservice
+  labels:
+    app: emailservice
 spec:
   selector:
     matchLabels:
@@ -75,6 +77,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: emailservice
+  labels:
+    app: emailservice
 spec:
   type: ClusterIP
   selector:
@@ -88,6 +92,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: checkoutservice
+  labels:
+    app: checkoutservice
 spec:
   selector:
     matchLabels:
@@ -148,6 +154,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: checkoutservice
+  labels:
+    app: checkoutservice
 spec:
   type: ClusterIP
   selector:
@@ -161,6 +169,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: recommendationservice
+  labels:
+    app: recommendationservice
 spec:
   selector:
     matchLabels:
@@ -216,6 +226,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: recommendationservice
+  labels:
+    app: recommendationservice
 spec:
   type: ClusterIP
   selector:
@@ -229,6 +241,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
+  labels:
+    app: frontend
 spec:
   selector:
     matchLabels:
@@ -316,6 +330,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: frontend
+  labels:
+    app: frontend
 spec:
   type: ClusterIP
   selector:
@@ -329,6 +345,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: frontend-external
+  labels:
+    app: frontend
 spec:
   type: LoadBalancer
   selector:
@@ -342,6 +360,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: paymentservice
+  labels:
+    app: paymentservice
 spec:
   selector:
     matchLabels:
@@ -393,6 +413,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: paymentservice
+  labels:
+    app: paymentservice
 spec:
   type: ClusterIP
   selector:
@@ -406,6 +428,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: productcatalogservice
+  labels:
+    app: productcatalogservice
 spec:
   selector:
     matchLabels:
@@ -457,6 +481,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: productcatalogservice
+  labels:
+    app: productcatalogservice
 spec:
   type: ClusterIP
   selector:
@@ -470,6 +496,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: cartservice
+  labels:
+    app: cartservice
 spec:
   selector:
     matchLabels:
@@ -522,6 +550,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: cartservice
+  labels:
+    app: cartservice
 spec:
   type: ClusterIP
   selector:
@@ -535,6 +565,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: loadgenerator
+  labels:
+    app: loadgenerator
 spec:
   selector:
     matchLabels:
@@ -605,6 +637,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: currencyservice
+  labels:
+    app: currencyservice
 spec:
   selector:
     matchLabels:
@@ -657,6 +691,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: currencyservice
+  labels:
+    app: currencyservice
 spec:
   type: ClusterIP
   selector:
@@ -670,6 +706,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: shippingservice
+  labels:
+    app: shippingservice
 spec:
   selector:
     matchLabels:
@@ -721,6 +759,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: shippingservice
+  labels:
+    app: shippingservice
 spec:
   type: ClusterIP
   selector:
@@ -734,6 +774,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: redis-cart
+  labels:
+    app: redis-cart
 spec:
   selector:
     matchLabels:
@@ -786,6 +828,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: redis-cart
+  labels:
+    app: redis-cart
 spec:
   type: ClusterIP
   selector:
@@ -799,6 +843,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: adservice
+  labels:
+    app: adservice
 spec:
   selector:
     matchLabels:
@@ -852,6 +898,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: adservice
+  labels:
+    app: adservice
 spec:
   type: ClusterIP
   selector:
