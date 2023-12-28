@@ -27,6 +27,8 @@ spec:
   lifecycle: production
   owner: default/retail-team
   system: default/online-boutique
+  dependsOn:
+    - cartservice
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -34,7 +36,20 @@ metadata:
   namespace: online-boutique
   name: cartservice
   annotations:
-    backstage.io/kubernetes-id: 'cartservice'
+    backstage.io/kubernetes-label-selector: 'app=cartservice'
+spec:
+  type: service
+  lifecycle: production
+  owner: default/retail-team
+  system: default/online-boutique
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  namespace: online-boutique
+  name: redis-cart
+  annotations:
+    backstage.io/kubernetes-label-selector: 'app=redis-cart'
 spec:
   type: service
   lifecycle: production
