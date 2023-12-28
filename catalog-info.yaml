@@ -28,7 +28,12 @@ spec:
   owner: default/retail-team
   system: default/online-boutique
   dependsOn:
+    - component:currencyservice
+    - component:shippingservice
     - component:cartservice
+    - component:productcatalogservice
+    - component:recommendationservice
+    - component:adservice
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -55,3 +60,117 @@ spec:
   lifecycle: production
   owner: default/retail-team
   system: default/online-boutique
+  subcomponentOf: "component:cartservice"
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  namespace: online-boutique
+  name: adservice
+  annotations:
+    backstage.io/kubernetes-label-selector: 'app=adservice'
+spec:
+  type: service
+  lifecycle: production
+  owner: default/retail-team
+  system: default/online-boutique
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  namespace: online-boutique
+  name: recommendationservice
+  annotations:
+    backstage.io/kubernetes-label-selector: 'app=recommendationservice'
+spec:
+  type: service
+  lifecycle: production
+  owner: default/retail-team
+  system: default/online-boutique
+  dependsOn:
+    - component:productcatalogservice
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  namespace: online-boutique
+  name: productcatalogservice
+  annotations:
+    backstage.io/kubernetes-label-selector: 'app=productcatalogservice'
+spec:
+  type: service
+  lifecycle: production
+  owner: default/retail-team
+  system: default/online-boutique
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  namespace: online-boutique
+  name: shippingservice
+  annotations:
+    backstage.io/kubernetes-label-selector: 'app=shippingservice'
+spec:
+  type: service
+  lifecycle: production
+  owner: default/retail-team
+  system: default/online-boutique
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  namespace: online-boutique
+  name: currencyservice
+  annotations:
+    backstage.io/kubernetes-label-selector: 'app=currencyservice'
+spec:
+  type: service
+  lifecycle: production
+  owner: default/retail-team
+  system: default/online-boutique
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  namespace: online-boutique
+  name: paymentservice
+  annotations:
+    backstage.io/kubernetes-label-selector: 'app=paymentservice'
+spec:
+  type: service
+  lifecycle: production
+  owner: default/retail-team
+  system: default/online-boutique
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  namespace: online-boutique
+  name: emailservice
+  annotations:
+    backstage.io/kubernetes-label-selector: 'app=emailservice'
+spec:
+  type: service
+  lifecycle: production
+  owner: default/retail-team
+  system: default/online-boutique
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  namespace: online-boutique
+  name: checkoutservice
+  annotations:
+    backstage.io/kubernetes-label-selector: 'app=checkoutservice'
+spec:
+  type: service
+  lifecycle: production
+  owner: default/retail-team
+  system: default/online-boutique
+  dependsOn:
+    - component:emailservice
+    - component:paymentservice
+    - component:currencyservice
+    - component:shippingservice
+    - component:cartservice
+    - component:productcatalogservice
