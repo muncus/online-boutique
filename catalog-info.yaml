@@ -47,7 +47,8 @@ spec:
   lifecycle: production
   owner: default/retail-team
   system: default/online-boutique
-  dependsOn: component:redis-cart
+  dependsOn:
+    - component:redis-cart
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
